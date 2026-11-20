@@ -123,12 +123,14 @@ main {
   text-decoration-color: var(--copyColor4);
 }
 
-@media only screen and (max-width: 398px) {
+@media only screen and (max-width: 440px) {
   .card {
     width: 250px;
-    height: 400px;
+    height: 300px;
   }
+}
 
+@media only screen and (max-width: 398px) {
   .copy {
     padding: 6px 0;
     line-height: 1.6;
