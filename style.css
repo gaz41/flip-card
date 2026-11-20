@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --font1: "Roboto", sans-serif;
+  --backgroundColor1: #84a696;
+  --letterSpacing: 0.7px;
+  --color1: #101010;
+  --color2: #f0f0f0;
+  --copyColor1: #84a696;
+  --copyColor2: #404040;
+  --copyColor3: #666666;
+  --copyColor3: #606060;
+  --copyColor4: #808080;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--backgroundColor1);
+}
+
+.container {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  place-content: center;
+  font-family: var(--font1);
+  font-size: 24px;
+  padding: 0 10px;
+}
+
+h1 {
+  font-family: var(--font1);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--color1);
+  letter-spacing: var(--letterSpacing);
+  text-align: center;
+  padding: 40px 20px;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.card {
+  width: 300px;
+  height: 400px;
+  margin: 16px auto;
+  perspective: 1000px;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: var(--letterSpacing);
+  border-radius: 8px;
+  box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-front {
+  background: linear-gradient(90deg, #08492b 0%, #92e891 100%);
+}
+
+.card-back {
+  background: linear-gradient(270deg, #08492b 0%, #92e891 100%);
+  color: var(--color2);
+  transform: rotateY(180deg);
+}
+
+.copy {
+  background-color: var(--copyColor1);
+  color: var(--copyColor2);
+  font-family: var(--font1);
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: var(--letterSpacing);
+  padding: 20px 0;
+  margin-top: 50px;
+}
+
+.copy a {
+  color: var(--copyColor2);
+  text-decoration: underline dotted;
+  text-decoration-color: var(--copyColor3);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 6px;
+}
+
+.copy a:hover {
+  color: var(--copyColor2);
+  text-decoration-color: var(--copyColor4);
+}
+
+@media only screen and (max-width: 398px) {
+  .card {
+    width: 250px;
+    height: 400px;
+  }
+
+  .copy {
+    padding: 6px 0;
+    line-height: 1.6;
+  }
+
+  .copy2 {
+    display: block;
+  }
+}
+
+/* https://www.creative-tim.com/product/rotating-css-card */
+/* https://www.smashingmagazine.com/2020/02/magic-flip-cards-common-sizing-problem/ */
+/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_flip_card */
